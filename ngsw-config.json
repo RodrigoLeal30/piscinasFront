@@ -2,13 +2,12 @@
     "index": "/index.html",
     "assetGroups": [
       {
-        "name": "app-files",
+        "name": "Piscinas-vargas",
         "installMode": "prefetch",
         "updateMode": "prefetch",
         "resources": {
           "files": [
             "/favicon.ico",
-            "/assets/**",
             "/index.html",
             "/manifest.json"
           ]

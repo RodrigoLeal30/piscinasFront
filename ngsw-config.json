@@ -1,0 +1,19 @@
+{
+    "index": "/index.html",
+    "assetGroups": [
+      {
+        "name": "app-files",
+        "installMode": "prefetch",
+        "updateMode": "prefetch",
+        "resources": {
+          "files": [
+            "/favicon.ico",
+            "/assets/**",
+            "/index.html",
+            "/manifest.json"
+          ]
+        }
+      }
+    ],
+    "dataGroups": []
+  }

@@ -1,0 +1,81 @@
+<app-header [isModal]="true" title="Mantención Cliente"></app-header>
+
+<ion-label>
+  <h1 class="comuna">{{cliente?.comuna}}</h1>
+  
+</ion-label>
+
+<ion-content>
+  <ion-button
+  slot="start"
+  fill="clear"
+  size="small"
+  (click)="cerrarModal()"
+  style="position: absolute; top: 10px; left: 10px; z-index: 1000;"
+>
+  <ion-icon name="close-outline" size="large"></ion-icon>
+</ion-button>
+
+  <ion-avatar>
+    <img [src]="'/assets/usuario2.jpg'" />
+  </ion-avatar>
+
+  <ion-item class="seccion-titulo">
+    <ion-label>
+      <h1 class="direccion">{{ cliente?.direccion }}</h1>
+      <h2 class="nombre">{{ cliente?.name }} {{cliente?.apellido}}</h2>
+
+    </ion-label>
+  </ion-item>
+
+  <div class="seccion-datos">
+   
+
+    <ion-item>
+      <ion-label class="titulo">Precio Mantención:</ion-label>
+      <ion-input 
+        class="valor"
+        [(ngModel)]="precioMantencion" 
+        type="number" 
+        placeholder="Ingrese precio"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label class="titulo">Descripción:</ion-label>
+      <ion-textarea
+        class="valor"
+        [(ngModel)]="descripcionMantencion"
+        placeholder="Ingrese descripción de la mantención"></ion-textarea>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label class="titulo">Foto de Mantención:</ion-label>
+      <ion-button color="secondary" expand="block" (click)="tomarFoto()">
+        <ion-icon name="camera-outline" slot="start"></ion-icon>
+        Tomar Foto
+      </ion-button>
+    </ion-item>
+
+    
+    <!-- Mostrar foto si está disponible -->
+    <div *ngIf="fotoMantencion">
+      <h3>Vista previa de la foto:</h3>
+      <img [src]="fotoMantencion" alt="Foto de mantención" style="max-width: 100%; border-radius: 10px;" />
+    </div>
+
+    <ion-item>
+      <ion-label class="titulo">Total Acumulado:</ion-label>
+      <p>Total: <strong>{{ cliente?.total | currency:'USD':'symbol':'1.0-0' }}</strong></p>
+    </ion-item>
+  </div>
+
+  <div class="seccion-botones">
+    <ion-button (click)="agregarMantencion()" color="primary" expand="block" size="large" shape="round">
+      Aplicar Mantención
+    </ion-button>
+  
+    <ion-button (click)="cerrarModal()" color="medium" expand="block" size="large" shape="round">
+      Cancelar
+    </ion-button>
+  </div>
+</ion-content>

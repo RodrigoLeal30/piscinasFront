@@ -1,0 +1,7 @@
+{
+  "name": "picinas-app",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

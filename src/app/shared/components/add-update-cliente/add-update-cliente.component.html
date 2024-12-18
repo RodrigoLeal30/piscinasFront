@@ -1,0 +1,104 @@
+<app-header [isModal]="true" title="Agregar Cliente"></app-header>
+<ion-content>
+  <form [formGroup]="form" class="ion-padding ion-text-center" (ngSubmit)="submit()" (keypress.enter)="submit()">
+    <!-- ============ Nombre =================-->
+    <app-custom-input
+      autocomplete="name"
+      [control]="form.controls.name"
+      type="text"
+      label="Nombre"
+    ></app-custom-input>
+    <div class="validators" *ngIf="form.controls.name.errors && form.controls.name.touched">
+      <div *ngIf="form.controls.name.errors?.['required']">El nombre es requerido</div>
+      <div *ngIf="form.controls.name.errors?.['minlength']">El nombre debe tener al menos 4 caracteres</div>
+    </div>
+
+    <!-- ============ Apellido =================-->
+    <app-custom-input
+      autocomplete="apellido"
+      [control]="form.controls.apellido"
+      type="text"
+      label="Apellido"
+    ></app-custom-input>
+    <div class="validators" *ngIf="form.controls.apellido.errors && form.controls.apellido.touched">
+      <div *ngIf="form.controls.apellido.errors?.['required']">El apellido es requerido</div>
+      <div *ngIf="form.controls.apellido.errors?.['minlength']">El apellido debe tener al menos 4 caracteres</div>
+    </div>
+
+    <!-- ============== Dirección ===========-->
+    <app-custom-input
+      autocomplete="direccion"
+      [control]="form.controls.direccion"
+      type="text"
+      label="Dirección"
+    ></app-custom-input>
+    <div class="validators" *ngIf="form.controls.direccion.errors && form.controls.direccion.touched">
+      <div *ngIf="form.controls.direccion.errors?.['required']">La dirección es requerida</div>
+      <div *ngIf="form.controls.direccion.errors?.['minlength']">La dirección debe tener al menos 4 caracteres</div>
+    </div>
+
+    <!-- ============== Comuna ===========-->
+    <ion-item>
+      <ion-label>Comuna</ion-label>
+      <ion-select formControlName="comuna" placeholder="Selecciona una comuna">
+        <ion-select-option *ngFor="let comuna of comunas" [value]="comuna">{{ comuna }}</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <div class="validators" *ngIf="form.controls.comuna.errors && form.controls.comuna.touched">
+      <div *ngIf="form.controls.comuna.errors?.['required']">La comuna es requerida</div>
+    </div>
+
+    <!-- ============== Teléfono ===========-->
+    <app-custom-input
+      autocomplete="telefono"
+      [control]="form.controls.telefono"
+      type="text"
+      label="Teléfono"
+    ></app-custom-input>
+    <div class="validators" *ngIf="form.controls.telefono.errors && form.controls.telefono.touched">
+      <div *ngIf="form.controls.telefono.errors?.['required']">El teléfono es requerido</div>
+      <div *ngIf="form.controls.telefono.errors?.['minlength']">El teléfono debe tener al menos 9 dígitos</div>
+    </div>
+
+    <!-- ============== Correo ===========-->
+    <app-custom-input
+      autocomplete="email"
+      [control]="form.controls.email"
+      type="email"
+      label="Correo Electrónico"
+    ></app-custom-input>
+    <div class="validators" *ngIf="form.controls.email.errors && form.controls.email.touched">
+      <div *ngIf="form.controls.email.errors?.['required']">El correo es requerido</div>
+      <div *ngIf="form.controls.email.errors?.['email']">El formato del correo no es válido</div>
+    </div>
+
+    <!-- ============ Mantenciones =================-->
+<app-custom-input
+autocomplete="mantenciones"
+[control]="form.controls.mantenciones"
+type="number"
+label="Número de Mantenciones"
+></app-custom-input>
+<div class="validators" *ngIf="form.controls.mantenciones.errors && form.controls.mantenciones.touched">
+<div *ngIf="form.controls.mantenciones.errors?.['required']">El número de mantenciones es requerido</div>
+<div *ngIf="form.controls.mantenciones.errors?.['min']">Debe ser un número positivo</div>
+</div>
+
+<!-- ============ Total =================-->
+<app-custom-input
+autocomplete="total"
+[control]="form.controls.total"
+type="number"
+label="Total Acumulado"
+></app-custom-input>
+<div class="validators" *ngIf="form.controls.total.errors && form.controls.total.touched">
+<div *ngIf="form.controls.total.errors?.['required']">El total es requerido</div>
+<div *ngIf="form.controls.total.errors?.['min']">Debe ser un número positivo</div>
+</div>
+
+    <ion-button mode="ios" class="ion-margin" type="submit" [disabled]="form.invalid">
+      {{ form.value.id ? 'Actualizar Cliente' : 'Agregar Cliente' }}
+      <ion-icon slot="end" [name]="form.value.id ? 'create-outline' : 'person-add-outline'"></ion-icon>
+    </ion-button>
+  </form>
+</ion-content>

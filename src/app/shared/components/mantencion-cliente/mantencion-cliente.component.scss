@@ -1,0 +1,105 @@
+:host {
+    --ion-background-color: #f7f9fc; /* Fondo suave */
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  ion-content {
+    padding: 15px;
+  }
+  
+  /* Avatar */
+  ion-avatar {
+    width: 150px;
+    height: 150px;
+    margin: 20px auto;
+    border: 3px solid #0a4784; /* Borde azul oscuro */
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  ion-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  /* Sección del título */
+  .seccion-titulo {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .direccion {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #0a4784;
+    margin: 5px 0;
+  }
+
+  .comuna{
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #0a4784;
+    margin: 5px 0;
+    text-align: center;
+  }
+  
+  .nombre {
+    font-size: 1.2rem;
+    color: #555;
+  }
+  
+  /* Sección de datos */
+  .seccion-datos {
+    margin-bottom: 30px;
+  }
+  
+  ion-item {
+    --background: transparent;
+    --color: #333;
+    margin: 10px 0;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Botones */
+  .seccion-botones {
+    margin-top: 20px;
+  }
+  
+  ion-button {
+    font-size: 1rem;
+    margin: 10px 0;
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  }
+  
+  ion-button[color="primary"] {
+    --background: #0a4784; /* Azul oscuro */
+    --background-hover: #083663;
+    --color: white;
+  }
+  
+  ion-button[color="medium"] {
+    --background: #9e9e9e; /* Gris suave */
+    --background-hover: #7e7e7e;
+    --color: white;
+  }
+  
+  /* Botones separados */
+  .seccion-botones ion-button:not(:last-child) {
+    margin-bottom: 15px;
+  }
+  
+  /* Transiciones */
+  ion-button {
+    transition: all 0.3s ease;
+  }
+  
+  ion-button:hover {
+    transform: scale(1.02);
+  }
+
+  .valor{
+    margin-left: 50px;
+  }

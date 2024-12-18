@@ -1,0 +1,39 @@
+.name-primary {
+    color: #0000ff; /* Azul */
+    font-weight: bold;
+  }
+  
+  .name-secondary {
+    color: #add8e6; /* Azul claro */
+  }
+
+  .example-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+
+  .logout-button {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: 10;
+  }
+
+ /* Contenedor que ocupa toda la pantalla */
+.logo-container {
+  position: absolute;
+  top: 50%; /* Centrado vertical */
+  left: 50%; /* Centrado horizontal */
+  transform: translate(-50%, -50%); /* Ajusta para centrar exactamente */
+  width: 80%; /* Ajusta el tamaño según lo necesites */
+  text-align: center;
+  z-index: 10; /* Asegura que el logo esté encima de otros elementos */
+}
+
+/* Logo con transparencia */
+.logo-center {
+  width: 80%; /* Ajusta el tamaño del logo */
+  opacity: 0.6; /* Transparencia del logo */
+}

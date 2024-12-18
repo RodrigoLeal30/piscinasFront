@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+:host {
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Fondo general de la página */
+ion-content {
+  --background: linear-gradient(145deg, #e6f0ff, #f5faff); /* Fondo azul claro degradado */
+  padding: 15px;
+}
+
+/* Encabezado */
+ion-toolbar {
+  --background: #003366; /* Azul oscuro */
+  --color: white;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Buscador */
+ion-searchbar {
+  --background: #ffffff;
+  --placeholder-color: #bbb;
+  --color: #003366; /* Color de texto del buscador */
+  margin: 15px 0;
+  border-radius: 25px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Lista de clientes */
+ion-list {
+  margin: 0;
+}
+
+ion-item-sliding {
+  margin-bottom: 15px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  background: #00509e; /* Azul oscuro para el fondo */
+}
+
+/* Estilo del cliente */
+ion-item {
+  --background: transparent;
+  --color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  border-radius: 20px;
+}
+
+/* Nombre del cliente */
+ion-item .name {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: white;
+}
+
+/* Dirección del cliente */
+ion-item .direccion {
+  font-size: 1rem;
+  color: orange; /* Amarillo */
+  font-weight: bold;
+}
+
+/* Detalles adicionales (mantenciones y total) */
+ion-item .info {
+  text-align: right;
+}
+
+ion-item .info .mantenciones,
+ion-item .info .total {
+  font-size: 0.9rem;
+  color: white;
+}
+
+ion-item .info .mantenciones strong,
+ion-item .info .total strong {
+  color: #191917; /* Amarillo dorado */
+}
+
+/* Iconos de opciones */
+ion-item-options {
+  background: #003366; /* Azul oscuro */
+}
+
+ion-item-options ion-icon {
+  font-size: 1.5rem;
+}
+
+ion-item-options ion-item-option {
+  border-radius: 0 10px 10px 0;
+  margin-left: 1px;
+  color: white;
+}
+
+/* Botón flotante */
+ion-fab-button {
+  --background: #003366; /* Azul oscuro */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+ion-fab-button:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+
+/* Lista general */
+.lista h2 {
+  font-size: 18px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+}
+
+.lista p {
+  font-size: 14px;
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+}
+
+.lista .direccion {
+  color: rgb(38, 36, 33);
+}
+ 
+/* COMUNA PEÑALOLEN */
+.comuna-penalolen {
+  background: linear-gradient(145deg, #bd892e, #ea260c); /* Azul oscuro */
+  color: white;
+}
+.comuna-penalolen .direccion{
+  color: #cecb39;
+  
+ 
+}
+
+
+/* COMUNA LAS CONDES */
+.comuna-condes {
+  background: linear-gradient(145deg, #f6e746, #bcaa20); /* Naranja degradado */
+  color: rgb(135, 18, 18);
+}
+
+.comuna-condes .direccion {
+  
+  color: rgb(217, 45, 18);
+}
+
+/* COMUNA LA FLORIDA */
+
+.comuna-florida {
+  background: linear-gradient(145deg, #81c784, #4caf50); /* Verde */
+  color: white;
+}
+
+.comuna-florida .direccion{
+  
+  color: rgb(165, 71, 9);
+}
+
+/* COMUNA LA REINA  */
+
+.comuna-reina  {
+  background: linear-gradient(145deg, #d07ba6, #80057c); /* Verde */
+  color: white;
+}
+
+.comuna-reina .direccion{
+  
+  color: rgb(200, 203, 19);
+}
+
+
+.comuna-macul {
+  background: linear-gradient(145deg, #5d64ed, #1127ec); /* Naranja degradado */
+  color: rgb(210, 190, 190);
+}
+
+.comuna-condes .direccion {
+  
+  color: rgb(217, 45, 18);
+}
+
+
+.comuna-default {
+  background: linear-gradient(145deg, #e0e0e0, #9e9e9e); /* Gris */
+  color: white
+}
+
+.comuna{
+  color: rgb(23, 20, 20);
+}
+
+
+/* estilos de las letras */
+
+.text-penalolen{
+  color: white;
+
+}
+
+.text-florida{
+  color: yellowgreen;
+}
+
+.text-la
+
+/* Mantener contraste en los textos */
+ion-item .comuna {
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+.cliente-card {
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease-in-out;
+}
+
+.cliente-card:hover {
+  transform: scale(1.05);
+}
+
+/* Transiciones */
+ion-item,
+ion-item-option,
+ion-fab-button {
+  transition: all 0.3s ease-in-out;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .lista h2 {
+    font-size: 16px;
+  }
+
+  .lista p {
+    font-size: 12px;
+  }
+
+  ion-searchbar {
+    margin: 10px 0;
+  }
+}

@@ -1,0 +1,29 @@
+<app-header title="Menu"></app-header>
+
+<ion-content [fullscreen]="true">
+  <!-- Botón de cerrar sesión -->
+  <ion-button
+    fill="clear"
+    slot="end"
+    color="danger"
+    (click)="signOut()"
+    class="logout-button"
+  >
+    <ion-icon slot="icon-only" name="log-out-outline"></ion-icon>
+  </ion-button>
+
+  <!-- Contenedor para el logo centrado -->
+  <div class="logo-container">
+    <img src="/assets/vargas.jpeg" alt="Logo" class="logo-center" />
+  </div>
+
+  <!-- Contenedor de las tabs -->
+  <ion-tabs>
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button routerLink="/main/listado" tab="library">
+        <ion-icon name="person"></ion-icon>
+        <ion-label>Clientes</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+</ion-content>

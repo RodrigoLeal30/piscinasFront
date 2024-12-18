@@ -7,12 +7,13 @@ import { Cliente } from '../models/cliente.model';
   providedIn: 'root',
 })
 export class EmailService {
-  private apiUrl = 'http://localhost:8080/api/clientes'; // URL base
+  // Cambiar a la URL del backend desplegado en Render
+  private apiUrl = 'https://piscinasbackend.onrender.com/api/clientes';  // URL del backend en Render
 
   constructor(private http: HttpClient) {}
 
   enviarCorreo(cliente: Cliente): Observable<any> {
-    // No concatenes /enviarCorreo aquí, ya está en el endpoint del backend
+    // Llamada al backend en producción (Render)
     return this.http.post(`${this.apiUrl}/enviarCorreo`, cliente);
   }
 

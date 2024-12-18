@@ -1,7 +1,7 @@
 {
     "name": "Piscinas Vargas",
     "short_name": "Piscinas Vargas",
-    "start_url": "/",
+    "start_url": "https://piscinas-app.web.app/auth",
     "display": "standalone",
     "background_color": "#ffffff",
     "theme_color": "#317EFB",

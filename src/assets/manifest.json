@@ -8,12 +8,12 @@
     "description": "Mantención de Piscinas",
     "icons": [
       {
-        "src": "'/assets/vargas.jpeg'",
+        "src": "/assets/vargas.jpeg",
         "sizes": "192x192",
         "type": "image/png"
       },
       {
-        "src": "'/assets/vargas.jpeg'",
+        "src": "/assets/vargas.jpeg",
         "sizes": "512x512",
         "type": "image/png"
       }

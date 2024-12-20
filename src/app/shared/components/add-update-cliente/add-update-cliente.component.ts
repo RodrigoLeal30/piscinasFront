@@ -15,15 +15,11 @@ export class AddUpdateClienteComponent implements OnInit {
 
   // Lista de comunas
   comunas: string[] = [
-    
-    
     'La Reina',
     'La Florida',
     'Las Condes',
     'Peñalolen',
     'Macul',
-    
-    
   ];
 
   form = new FormGroup({
@@ -141,12 +137,14 @@ export class AddUpdateClienteComponent implements OnInit {
   addHashToAddress(): void {
     const direccion = this.form.get('direccion')?.value || '';
     const regex = /(.*?)(#?\d+)/; // Captura texto y numeración con o sin #
-    const match = regex.exec(direccion);
-  
-    if (match) {
-      // Crear la nueva dirección con espacio después del '#'
-      const nuevaDireccion = `${match[1].trim()} #${match[2].replace(' #', '').trim()}`;
-      this.form.get('direccion')?.setValue(nuevaDireccion);
+
+    if (!direccion.includes('#')) { // Solo agrega '#' si no está presente
+      const match = regex.exec(direccion);
+      if (match) {
+        // Crear la nueva dirección con espacio después del '#'
+        const nuevaDireccion = `${match[1].trim()} #${match[2].replace(' #', '').trim()}`;
+        this.form.get('direccion')?.setValue(nuevaDireccion);
+      }
     }
   }
 }

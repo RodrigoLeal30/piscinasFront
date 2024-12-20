@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject, OnInit, OnDestroy } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { FirebaseService } from 'src/app/services/firebase.service';
 import { User } from 'src/app/models/user.model';
@@ -9,18 +9,28 @@ import { UtilsService } from 'src/app/services/utils.service';
   templateUrl: './auth.page.html',
   styleUrls: ['./auth.page.scss'],
 })
-export class AuthPage implements OnInit {
+export class AuthPage implements OnInit, OnDestroy {
   form = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
     password: new FormControl('', [Validators.required]),
   });
 
-  firebaseSvc = inject(FirebaseService);
-  utilsSvc = inject(UtilsService);
-  sessionTimeout: any; // Timer para cerrar sesión automáticamente
-  sessionDuration = 1 * 60 * 1000; // Duración de la sesión en milisegundos (30 minutos)
+  private firebaseSvc = inject(FirebaseService);
+  private utilsSvc = inject(UtilsService);
+  private sessionTimeout: any; // Timer para cerrar sesión automáticamente
+  private sessionDuration = 15 * 60 * 1000; // Duración de la sesión en milisegundos (15 minutos)
 
-  ngOnInit() {}
+  ngOnInit() {
+    console.log('Probando temporizador manual...');
+    setTimeout(() => {
+      console.log('Temporizador manual alcanzado.');
+      this.endSession();
+    }, this.sessionDuration);
+  }
+
+  ngOnDestroy() {
+    this.clearSessionTimer();
+  }
 
   async submit() {
     if (this.form.valid) {
@@ -31,7 +41,7 @@ export class AuthPage implements OnInit {
         .sign(this.form.value as User)
         .then((res) => {
           this.getUserInfo(res.user.uid);
-          this.startSessionTimer(); // Iniciar el timer de la sesión
+          this.startSessionTimer(); // Iniciar el temporizador de la sesión
         })
         .catch((error) => {
           console.error(error);
@@ -47,10 +57,17 @@ export class AuthPage implements OnInit {
         .finally(() => {
           loading.dismiss();
         });
+    } else {
+      this.utilsSvc.presentToast({
+        message: 'Por favor, completa todos los campos correctamente.',
+        duration: 2500,
+        color: 'warning',
+        position: 'middle',
+      });
     }
   }
 
-  async getUserInfo(uid: string) {
+  private async getUserInfo(uid: string) {
     const loading = await this.utilsSvc.loading();
     await loading.present();
 
@@ -86,25 +103,39 @@ export class AuthPage implements OnInit {
       });
   }
 
-  // ======== Iniciar el timer para cerrar sesión ========
-  startSessionTimer() {
-    // Limpiar el timer previo si existe
-    if (this.sessionTimeout) {
-      clearTimeout(this.sessionTimeout);
-    }
+  // ======== Iniciar el temporizador para cerrar sesión ========
+  private startSessionTimer() {
+    console.log('Iniciando temporizador de sesión...');
+    this.clearSessionTimer();
 
-    // Configurar un nuevo timer
     this.sessionTimeout = setTimeout(() => {
-      this.firebaseSvc.signOut();
-      this.utilsSvc.saveInLocalStorage('user', null);
-      this.utilsSvc.routerLink('/auth');
-      this.utilsSvc.presentToast({
-        message: 'Tu sesión ha expirado. Por favor, inicia sesión nuevamente.',
-        duration: 3000,
-        color: 'warning',
-        position: 'middle',
-        icon: 'time-outline',
-      });
-    }, this.sessionDuration); // 30 minutos
+      console.log('Temporizador alcanzado.');
+      this.endSession();
+    }, this.sessionDuration);
+  }
+
+  // ======== Limpiar el temporizador ========
+  private clearSessionTimer() {
+    if (this.sessionTimeout) {
+      console.log('Limpiando temporizador previo.');
+      clearTimeout(this.sessionTimeout);
+      this.sessionTimeout = null;
+    }
+  }
+
+  // ======== Finalizar la sesión ========
+  private endSession() {
+    console.log('Ejecutando endSession...');
+    this.firebaseSvc.signOut();
+    this.utilsSvc.saveInLocalStorage('user', null);
+    this.utilsSvc.routerLink('/auth');
+
+    this.utilsSvc.presentToast({
+      message: 'Tu sesión ha expirado. Por favor, inicia sesión nuevamente.',
+      duration: 3000,
+      color: 'warning',
+      position: 'middle',
+      icon: 'time-outline',
+    });
   }
 }

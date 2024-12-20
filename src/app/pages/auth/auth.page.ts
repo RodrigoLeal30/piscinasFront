@@ -18,7 +18,7 @@ export class AuthPage implements OnInit {
   firebaseSvc = inject(FirebaseService);
   utilsSvc = inject(UtilsService);
   sessionTimeout: any; // Timer para cerrar sesión automáticamente
-  sessionDuration = 30 * 60 * 1000; // Duración de la sesión en milisegundos (30 minutos)
+  sessionDuration = 1 * 60 * 1000; // Duración de la sesión en milisegundos (30 minutos)
 
   ngOnInit() {}
 

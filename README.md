@@ -49,6 +49,11 @@ Podemos editar al cliente y modificar sus mantenciones y total tambien sus datos
 
 ![No se puede cargar la imagen](src/images/editar2.jpeg)
 
+### paso 7 :
+
+Al realizar la mantencion se notifica en la aplicacion el total acumulado y el envio del correo al cliente
+
+
 ![No se puede cargar la imagen](src/images/image7.jpeg)
 
 ![No se puede cargar la imagen](src/images/image8.jpeg)

@@ -26,6 +26,11 @@ Aqui ya en el menu nos vamos al apartado clientes para divisar todos nuestros cl
 
 ![No se puede cargar la imagen](src/images/image3.jpeg)
 
+### paso 4 :
+
+Aqui podemos divisar a los clientes agregados o podemos agregar nuestros clientes, podemos ver tambien que las targetas estan distribuidas por colores diferenciandose por comuna y un buscador en la parte superior. todo esto bajo los requerimientos del cliente.
+
+![No se puede cargar la imagen](src/images/image4.jpeg)
 
 
 

@@ -28,7 +28,7 @@ Aqui ya en el menu nos vamos al apartado clientes para divisar todos nuestros cl
 
 ### paso 4 :
 
-Aqui podemos divisar a los clientes agregados o podemos agregar nuestros clientes, podemos ver tambien que las targetas estan distribuidas por colores diferenciandose por comuna y un buscador en la parte superior. todo esto bajo los requerimientos del cliente.
+Aqui podemos divisar a los clientes agregados o podemos agregar nuestros clientes, podemos ver tambien que las targetas estan distribuidas por colores diferenciandose por comuna y un buscador en la parte superior. todo esto bajo los requerimientos del cliente.Para agregar un cliente apretamos el boton + que aparece en la esquina inferior derecha y se nos abre un modal en el cual contiene un formulario de registro
 
 ![No se puede cargar la imagen](src/images/image4.jpeg)
 
@@ -36,9 +36,16 @@ Aqui podemos divisar a los clientes agregados o podemos agregar nuestros cliente
 
 ### paso 5 :
 
-Para agregar un cliente apretamos el boton + que aparece en la esquina inferior derecha y se nos abre un modal en el cual contiene un formulario de registro
+En este modal que agregamos podemos realizar la mantencion del cliente seleccionado introduciendo el precio de la mantencion, alguna descripcion opcional del trabajo que se le hizo 
+una captura de algun cambio de filtro u otro servicio realizado esto es opcional tambien y al seleccionar aplicar mantencion se le enviara un correo al cliente notificandole de la mantencion realizada.
 
 ![No se puede cargar la imagen](src/images/image6.jpeg)
+
+### paso 6 :
+
+![No se puede cargar la imagen](src/images/image7.jpeg)
+
+
 
 
 

@@ -16,7 +16,15 @@ Aqui creamos una acceso directo desde la pagina web para que quede como aplicaci
 
 ### paso 2 :
 
+Aqui ingresamos nuestro correo y contraseña, para entrar al menu de la aplicación 
+
 ![No se puede cargar la imagen](src/images/image2.jpeg)
+
+### paso 3 :
+
+Aqui ya en el menu nos vamos al apartado clientes para divisar todos nuestros clientes agregados
+
+![No se puede cargar la imagen](src/images/image3.jpeg)
 
 
 

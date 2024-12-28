@@ -32,6 +32,12 @@ Aqui podemos divisar a los clientes agregados o podemos agregar nuestros cliente
 
 ![No se puede cargar la imagen](src/images/image4.jpeg)
 
+### paso 5 :
+
+Para agregar un cliente apretamos el boton + que aparece en la esquina inferior derecha y se nos abre un modal en el cual contiene un formulario de registro
+
+![No se puede cargar la imagen](src/images/image5.jpeg)
+
 
 
 

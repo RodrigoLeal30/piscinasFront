@@ -41,6 +41,14 @@ una captura de algun cambio de filtro u otro servicio realizado esto es opcional
 
 ![No se puede cargar la imagen](src/images/image6.jpeg)
 
+### paso 6 :
+
+Podemos editar al cliente y modificar sus mantenciones y total tambien sus datos personales
+
+![No se puede cargar la imagen](src/images/editar1.jpeg)
+
+![No se puede cargar la imagen](src/images/editar2.jpeg)
+
 ![No se puede cargar la imagen](src/images/image7.jpeg)
 
 ![No se puede cargar la imagen](src/images/image8.jpeg)

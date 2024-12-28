@@ -41,10 +41,13 @@ una captura de algun cambio de filtro u otro servicio realizado esto es opcional
 
 ![No se puede cargar la imagen](src/images/image6.jpeg)
 
-### paso 6 :
-
 ![No se puede cargar la imagen](src/images/image7.jpeg)
 
+![No se puede cargar la imagen](src/images/image8.jpeg)
+
+![No se puede cargar la imagen](src/images/image9.jpeg)
+
+![No se puede cargar la imagen](src/images/image10.jpeg)
 
 
 
